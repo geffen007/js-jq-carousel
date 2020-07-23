@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    // getNumber(); stavo risolvendo un altro problema, non so quale ma lo stavo risolvendo.
+
     $('.prev').click(function(){
         prevImage();
     });
@@ -7,6 +9,14 @@ $(document).ready(function() {
     $('.next').click(function(){
         nextImage();
     });
+
+    $('.nav i').click(function(){
+        removeActive();
+        $(this).addClass('active');
+        selectImg($(this));
+
+    });
+
 
     // funzioni
 
@@ -40,6 +50,33 @@ $(document).ready(function() {
             activeImg.next().addClass('active');
             activeRound.next().addClass('active');
         }
+    }
+
+    // un po di deliri pre soluzione
+    // function getNumber (){
+    //     var getZero = $('.first');
+    //     getZero.addClass('slide'+ 0);
+    //
+    //     var i = 1;
+    //     while(!getZero.hasClass('last')){
+    //         getZero.next().addClass('slide'+ i);
+    //         getZero=getZero.next();
+    //         i++
+    //     }
+    // }
+
+    
+    function removeActive (){
+        var object = $('.first');
+        object.removeClass('active');
+        while(!object.hasClass('last')){
+            object.next().removeClass('active');
+            object=object.next();
+        }
+    }
+
+    function selectImg(x){
+    $('.images img').eq(x.index()).addClass('active');
     }
 
 
