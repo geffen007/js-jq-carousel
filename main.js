@@ -14,7 +14,6 @@ $(document).ready(function() {
         removeActive();
         $(this).addClass('active');
         selectImg($(this));
-
     });
 
 
@@ -65,19 +64,22 @@ $(document).ready(function() {
     //     }
     // }
 
-    
-    function removeActive (){
-        var object = $('.first');
-        object.removeClass('active');
-        while(!object.hasClass('last')){
-            object.next().removeClass('active');
-            object=object.next();
-        }
+    // complichiamoci la vita
+    // function removeActive (){
+    //     var object = $('.first');
+    //     object.removeClass('active');
+    //     while(!object.hasClass('last')){
+    //         object.next().removeClass('active');
+    //         object=object.next();
+    //     }
+    // }
+
+    function removeActive(){
+        $('.images').children('img').removeClass('active');
+        $('.nav').children('i').removeClass('active');
     }
 
     function selectImg(x){
     $('.images img').eq(x.index()).addClass('active');
     }
-
-
 });
