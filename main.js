@@ -17,6 +17,8 @@ $(document).ready(function() {
     });
 
 
+
+
     // funzioni
 
     function prevImage(){
@@ -75,8 +77,8 @@ $(document).ready(function() {
     // }
 
     function removeActive(){
-        $('.images').children('img').removeClass('active');
-        $('.nav').children('i').removeClass('active');
+        $('.images img').removeClass('active');
+        $('.nav i').removeClass('active');
     }
 
     function selectImg(x){
